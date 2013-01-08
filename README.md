@@ -15,3 +15,4 @@ TODO
 6. Remove ANT Build files
 
 
+[Sonatype OSS Maven Repository Usage Guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide)
