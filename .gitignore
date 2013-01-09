@@ -1,4 +1,6 @@
 
 **/classesEclipse/*
 target
-**/tattle-findbugs/*
+tattle-findbugs/*
+**/bin/*
+**/build/*

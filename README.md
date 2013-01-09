@@ -28,10 +28,10 @@ This is messy and the resulting artifact should be a different name like findbug
 
 Unused Jar
 -----------
-asm-xml-3.3.jar
-findbugs-ant.jar
-jdepend-2.9.jar
-yjp-controller-api-redist.jar
+1. asm-xml-3.3.jar
+1. findbugs-ant.jar
+1. jdepend-2.9.jar
+1. yjp-controller-api-redist.jar
 
 
 
