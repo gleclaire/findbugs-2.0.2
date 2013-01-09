@@ -1,9 +1,9 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.code.findbugs</groupId>
-  <artifactId>findbugs</artifactId>
+  <artifactId>findbugs-project</artifactId>
   <version>2.0.2</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <parent>
     <groupId>org.sonatype.oss</groupId>
@@ -12,7 +12,7 @@
   </parent>
 
   <url>http://findbugs.sourceforge.net/</url>
-  <name>FindBugs</name>
+  <name>FindBugs-Project</name>
   <description>Findbugs: Because it's easy!</description>
   <inceptionYear>2003</inceptionYear>
   <licenses>
@@ -22,19 +22,19 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  
+
   <prerequisites>
     <maven>3.0</maven>
   </prerequisites>
 
-  
+
   <scm>
     <connection>scm:svn:http://findbugs.googlecode.com/svn/trunk/</connection>
     <developerConnection>scm:svn:https://findbugs.googlecode.com/svn/trunk/</developerConnection>
     <url>http://findbugs.googlecode.com/svn/trunk/</url>
   </scm>
-  
-   <developers>
+
+  <developers>
     <developer>
       <id>bp</id>
       <name>Bill Pugh</name>
@@ -162,42 +162,62 @@
 
   <dependencyManagement>
     <dependencies>
-    <dependency>
-      <groupId>dom4j</groupId>
-      <artifactId>dom4j</artifactId>
-      <version>1.6.1</version>
-    </dependency>
-    <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-      <version>1.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>asm</groupId>
-      <artifactId>asm</artifactId>
-      <version>3.3</version>
-    </dependency>
-    <dependency>
-      <groupId>asm</groupId>
-      <artifactId>asm-tree</artifactId>
-      <version>3.3</version>
-    </dependency>
-    <dependency>
-      <groupId>asm</groupId>
-      <artifactId>asm-commons</artifactId>
-      <version>3.3</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-lang</groupId>
-      <artifactId>commons-lang</artifactId>
-      <version>2.4</version>
-    </dependency>
+      <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+      </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>asm</groupId>
+        <artifactId>asm</artifactId>
+        <version>3.3</version>
+      </dependency>
+      <dependency>
+        <groupId>asm</groupId>
+        <artifactId>asm-tree</artifactId>
+        <version>3.3</version>
+      </dependency>
+      <dependency>
+        <groupId>asm</groupId>
+        <artifactId>asm-commons</artifactId>
+        <version>3.3</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>net.jcip</groupId>
+        <artifactId>jcip-annotations</artifactId>
+        <version>1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.apple</groupId>
+        <artifactId>AppleJavaExtensions</artifactId>
+        <version>1.4</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
-  
+
   <dependencies>
   </dependencies>
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -215,4 +235,9 @@
       </plugin>
     </plugins>
   </build>
+
+  <modules>
+    <module>findbugs-annotations</module>
+    <module>findbugs</module>
+  </modules>
 </project>
