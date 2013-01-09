@@ -16,3 +16,22 @@ TODO
 
 
 [Sonatype OSS Maven Repository Usage Guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide)
+
+Research from TattleTale
+------------------------
+
+1. jsr305.jar, annotations.jar, and jcip-annotations.jar all get merged into annotations.jar
+This is messy and the resulting artifact should be a different name like findbugs-annotations.jar
+1. annotations.jar and findbugs.jar both contain the package  edu.umd.cs.findbugs.annotations.*  The package should be removed from on of the jars.
+1. findbugs-ant.jar and findbugs.jar both contain the edu.umd.cs.findbugs.anttask.* package. It looks like there is not a need to create the findbugs-ant.jar artifact anymore.
+
+
+Unused Jar
+-----------
+asm-xml-3.3.jar
+findbugs-ant.jar
+jdepend-2.9.jar
+yjp-controller-api-redist.jar
+
+
+
