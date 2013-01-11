@@ -13,6 +13,8 @@ TODO
 4. Remove jar files
 5. Move Source code to correct modules and directory structure.
 6. Remove ANT Build files
+7. Ensure apple dependency is not packaged
+8. Re-write history to eliminate repository-bloat from binary aftifacts
 
 
 [Sonatype OSS Maven Repository Usage Guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide)
