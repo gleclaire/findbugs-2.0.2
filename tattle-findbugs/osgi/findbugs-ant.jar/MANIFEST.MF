@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.3
+Created-By: 1.6.0_37-b06-434-11M3909 (Apple Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: edu.umd.cs.findbugs.anttask
+Bundle-Description: findbugs-ant
+Bundle-Name: findbugs-ant
+Bundle-Version: 0.0.0
+Export-Package: edu.umd.cs.findbugs.anttask;uses:="edu.umd.cs.findbugs
+ .workflow,org.apache.tools.ant,org.apache.tools.ant.taskdefs,org.apac
+ he.tools.ant.types"
+Import-Package: edu.umd.cs.findbugs.workflow;version="0.0.0",java.io,j
+ ava.lang,java.nio.channels,java.util,org.apache.tools.ant;version="1.
+ 8.3",org.apache.tools.ant.taskdefs;version="1.8.3",org.apache.tools.a
+ nt.types;version="1.8.3"

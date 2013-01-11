@@ -1,0 +1,29 @@
+digraph bcel_package_dependencies {
+  node [shape = box, fontsize=10.0];
+  org_apache_bcel -> org_apache_bcel_classfile;
+  org_apache_bcel -> org_apache_bcel_util;
+  org_apache_bcel_classfile -> org_apache_bcel;
+  org_apache_bcel_classfile -> org_apache_bcel_generic;
+  org_apache_bcel_classfile -> org_apache_bcel_util;
+  org_apache_bcel_generic -> org_apache_bcel;
+  org_apache_bcel_generic -> org_apache_bcel_classfile;
+  org_apache_bcel_generic -> org_apache_bcel_util;
+  org_apache_bcel_util -> org_apache_bcel;
+  org_apache_bcel_util -> org_apache_bcel_classfile;
+  org_apache_bcel_util -> org_apache_bcel_generic;
+  org_apache_bcel_verifier -> org_apache_bcel;
+  org_apache_bcel_verifier -> org_apache_bcel_classfile;
+  org_apache_bcel_verifier -> org_apache_bcel_generic;
+  org_apache_bcel_verifier -> org_apache_bcel_verifier_statics;
+  org_apache_bcel_verifier -> org_apache_bcel_verifier_structurals;
+  org_apache_bcel_verifier_statics -> org_apache_bcel;
+  org_apache_bcel_verifier_statics -> org_apache_bcel_classfile;
+  org_apache_bcel_verifier_statics -> org_apache_bcel_generic;
+  org_apache_bcel_verifier_statics -> org_apache_bcel_verifier;
+  org_apache_bcel_verifier_statics -> org_apache_bcel_verifier_exc;
+  org_apache_bcel_verifier_structurals -> org_apache_bcel;
+  org_apache_bcel_verifier_structurals -> org_apache_bcel_classfile;
+  org_apache_bcel_verifier_structurals -> org_apache_bcel_generic;
+  org_apache_bcel_verifier_structurals -> org_apache_bcel_verifier;
+  org_apache_bcel_verifier_structurals -> org_apache_bcel_verifier_exc;
+}

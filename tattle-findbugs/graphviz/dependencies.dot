@@ -1,0 +1,29 @@
+digraph dependencies {
+  node [shape = box, fontsize=10.0];
+  asm_analysis_3_3 -> asm_3_3;
+  asm_analysis_3_3 -> asm_tree_3_3;
+  asm_commons_3_3 -> asm_3_3;
+  asm_commons_3_3 -> asm_tree_3_3;
+  asm_tree_3_3 -> asm_3_3;
+  asm_util_3_3 -> asm_3_3;
+  asm_util_3_3 -> asm_analysis_3_3;
+  asm_util_3_3 -> asm_tree_3_3;
+  asm_xml_3_3 -> asm_3_3;
+  asm_xml_3_3 -> asm_util_3_3;
+  dom4j_1_6_1 -> jaxen_1_1_1;
+  findbugs_ant -> ant;
+  findbugs_ant -> findbugs;
+  findbugs -> AppleJavaExtensions;
+  findbugs -> annotations;
+  findbugs -> ant;
+  findbugs -> asm_3_3;
+  findbugs -> asm_commons_3_3;
+  findbugs -> asm_tree_3_3;
+  findbugs -> bcel;
+  findbugs -> commons_lang_2_4;
+  findbugs -> dom4j_1_6_1;
+  findbugs -> jFormatString;
+  jFormatString -> junit;
+  jaxen_1_1_1 -> dom4j_1_6_1;
+  jdepend_2_9 -> junit;
+}

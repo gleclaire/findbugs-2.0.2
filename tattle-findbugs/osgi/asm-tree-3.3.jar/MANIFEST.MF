@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Implementation-Vendor: France Telecom R&D
+Ant-Version: Apache Ant 1.7.1
+Implementation-Title: ASM Tree class visitor
+Implementation-Version: 3.3
+Created-By: 14.3-b01 (Sun Microsystems Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.objectweb.asm.tree
+Bundle-Description: asm-tree-3.3
+Bundle-Name: asm-tree-3.3
+Bundle-Version: 3.3
+Export-Package: org.objectweb.asm.tree;uses:="org.objectweb.asm"
+Import-Package: java.lang,java.util,org.objectweb.asm;version="3.3"

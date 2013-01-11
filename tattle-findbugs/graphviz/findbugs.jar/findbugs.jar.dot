@@ -1,0 +1,13 @@
+digraph findbugs_dependencies {
+  node [shape = box, fontsize=10.0];
+  findbugs -> AppleJavaExtensions;
+  findbugs -> annotations;
+  findbugs -> ant;
+  findbugs -> asm_3_3;
+  findbugs -> asm_commons_3_3;
+  findbugs -> asm_tree_3_3;
+  findbugs -> bcel;
+  findbugs -> commons_lang_2_4;
+  findbugs -> dom4j_1_6_1;
+  findbugs -> jFormatString;
+}

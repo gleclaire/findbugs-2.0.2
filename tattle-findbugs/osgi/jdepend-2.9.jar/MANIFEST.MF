@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+Created-By: 1.4.2-38 ("Apple Computer, Inc.")
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: jdepend.framework
+Bundle-Description: jdepend-2.9
+Bundle-Name: jdepend-2.9
+Bundle-Version: 0.0.0
+Export-Package: jdepend.framework;uses:="junit.framework,junit.textui"
+ ,jdepend.swingui;uses:="jdepend.framework",jdepend.textui;uses:="jdep
+ end.framework",jdepend.xmlui;uses:="jdepend.framework,jdepend.textui"
+Import-Package: java.awt,java.awt.event,java.io,java.lang,java.lang.re
+ flect,java.math,java.net,java.rmi,java.sql,java.text,java.util,java.u
+ til.jar,java.util.zip,javax.swing,javax.swing.border,javax.swing.even
+ t,javax.swing.tree,junit.framework;version="0.0.0",junit.textui;versi
+ on="0.0.0"

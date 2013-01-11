@@ -1,0 +1,9 @@
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: net.jcip.annotations
+Bundle-Description: jcip-annotations
+Bundle-Name: jcip-annotations
+Bundle-Version: 0.0.0
+Export-Package: net.jcip.annotations
+Import-Package: java.lang,java.lang.annotation

@@ -1,0 +1,16 @@
+digraph commons_lang_2_4_package_dependencies {
+  node [shape = box, fontsize=10.0];
+  org_apache_commons_lang -> org_apache_commons_lang_builder;
+  org_apache_commons_lang -> org_apache_commons_lang_exception;
+  org_apache_commons_lang -> org_apache_commons_lang_math;
+  org_apache_commons_lang_builder -> org_apache_commons_lang;
+  org_apache_commons_lang_builder -> org_apache_commons_lang_math;
+  org_apache_commons_lang_enum -> org_apache_commons_lang;
+  org_apache_commons_lang_enums -> org_apache_commons_lang;
+  org_apache_commons_lang_exception -> org_apache_commons_lang;
+  org_apache_commons_lang_math -> org_apache_commons_lang;
+  org_apache_commons_lang_mutable -> org_apache_commons_lang;
+  org_apache_commons_lang_mutable -> org_apache_commons_lang_math;
+  org_apache_commons_lang_text -> org_apache_commons_lang;
+  org_apache_commons_lang_time -> org_apache_commons_lang;
+}

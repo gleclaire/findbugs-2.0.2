@@ -1,0 +1,5 @@
+digraph findbugs_ant_dependencies {
+  node [shape = box, fontsize=10.0];
+  findbugs_ant -> ant;
+  findbugs_ant -> findbugs;
+}

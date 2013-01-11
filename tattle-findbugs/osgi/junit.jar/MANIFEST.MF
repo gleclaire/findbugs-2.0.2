@@ -1,0 +1,53 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_13-119 (Apple Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.junit.internal.runners
+Bundle-Description: junit
+Bundle-Name: junit
+Bundle-Version: 0.0.0
+Export-Package: junit.extensions;uses:="junit.framework",junit.framewo
+ rk;uses:="org.junit,org.junit.runner,org.junit.runner.manipulation,or
+ g.junit.runner.notification",junit.runner;uses:="junit.framework",jun
+ it.textui;uses:="junit.framework,junit.runner",org.hamcrest;uses:="or
+ g.hamcrest.core,org.hamcrest.internal",org.hamcrest.core;uses:="org.h
+ amcrest",org.hamcrest.internal;uses:="org.hamcrest",org.junit;uses:="
+ org.hamcrest,org.junit.internal,org.junit.internal.matchers",org.juni
+ t.experimental.results;uses:="org.hamcrest,org.junit.internal,org.jun
+ it.internal.matchers,org.junit.runner,org.junit.runner.notification",
+ org.junit.experimental.runners;uses:="org.junit.runners,org.junit.run
+ ners.model",org.junit.experimental.theories;uses:="org.junit,org.juni
+ t.experimental.theories.internal,org.junit.internal,org.junit.runners
+ ,org.junit.runners.model",org.junit.experimental.theories.internal;us
+ es:="org.junit.experimental.theories,org.junit.runners.model",org.jun
+ it.experimental.theories.suppliers;uses:="org.junit.experimental.theo
+ ries",org.junit.internal;uses:="org.hamcrest,org.junit.runner,org.jun
+ it.runner.notification",org.junit.internal.builders;uses:="junit.fram
+ ework,org.junit,org.junit.internal.runners,org.junit.runner,org.junit
+ .runner.notification,org.junit.runners,org.junit.runners.model",org.j
+ unit.internal.matchers;uses:="org.hamcrest,org.hamcrest.core",org.jun
+ it.internal.requests;uses:="org.junit.internal.builders,org.junit.int
+ ernal.runners,org.junit.runner,org.junit.runner.manipulation",org.jun
+ it.internal.runners;uses:="junit.extensions,junit.framework,org.junit
+ ,org.junit.internal,org.junit.runner,org.junit.runner.manipulation,or
+ g.junit.runner.notification,org.junit.runners.model",org.junit.intern
+ al.runners.model;uses:="org.junit.internal,org.junit.runner,org.junit
+ .runner.notification",org.junit.internal.runners.statements;uses:="or
+ g.junit.internal.runners.model,org.junit.runners.model",org.junit.mat
+ chers;uses:="org.hamcrest,org.junit.internal.matchers",org.junit.runn
+ er;uses:="junit.framework,junit.runner,org.junit.internal,org.junit.i
+ nternal.builders,org.junit.internal.requests,org.junit.internal.runne
+ rs,org.junit.runner.manipulation,org.junit.runner.notification,org.ju
+ nit.runners,org.junit.runners.model",org.junit.runner.manipulation;us
+ es:="org.junit.runner",org.junit.runner.notification;uses:="org.junit
+ .runner",org.junit.runners;uses:="org.junit,org.junit.internal,org.ju
+ nit.internal.builders,org.junit.internal.runners,org.junit.internal.r
+ unners.model,org.junit.internal.runners.statements,org.junit.runner,o
+ rg.junit.runner.manipulation,org.junit.runner.notification,org.junit.
+ runners.model",org.junit.runners.model;uses:="org.junit,org.junit.int
+ ernal.runners,org.junit.internal.runners.model,org.junit.runner"
+Import-Package: java.io,java.lang,java.lang.annotation,java.lang.refle
+ ct,java.text,java.util,java.util.concurrent,java.util.regex

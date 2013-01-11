@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Export-Package: edu.umd.cs.findbugs.annotations,javax.annotation,javax
+ .annotation.concurrent,javax.annotation.meta,net.jcip.annotations
+Ant-Version: Apache Ant 1.8.3
+Bundle-Version: 2.0.2
+Bundle-Name: FindbugsAnnotations
+Bundle-ManifestVersion: 2
+Created-By: 1.6.0_37-b06-434-11M3909 (Apple Inc.)
+Bundle-SymbolicName: findbugsAnnotations
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_29-b11 (Sun Microsystems Inc.)
+Main-Class: com.yourkit.api.Controller
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.yourkit.api
+Bundle-Description: yjp-controller-api-redist
+Bundle-Name: yjp-controller-api-redist
+Bundle-Version: 0.0.0
+Export-Package: com.yourkit,com.yourkit.api;uses:="com.yourkit,com.you
+ rkit.runtime,com.yourkit.util",com.yourkit.runtime;uses:="com.yourkit
+ ,com.yourkit.util",com.yourkit.util
+Import-Package: java.awt,java.io,java.lang,java.lang.reflect,java.math
+ ,java.net,java.text,java.util,java.util.zip

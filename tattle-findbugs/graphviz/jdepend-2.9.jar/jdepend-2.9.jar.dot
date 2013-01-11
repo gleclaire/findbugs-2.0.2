@@ -1,0 +1,4 @@
+digraph jdepend_2_9_dependencies {
+  node [shape = box, fontsize=10.0];
+  jdepend_2_9 -> junit;
+}

@@ -1,0 +1,4 @@
+digraph jaxen_1_1_1_dependencies {
+  node [shape = box, fontsize=10.0];
+  jaxen_1_1_1 -> dom4j_1_6_1;
+}

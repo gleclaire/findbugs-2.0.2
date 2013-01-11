@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Implementation-Vendor: France Telecom R&D
+Ant-Version: Apache Ant 1.7.1
+Implementation-Title: ASM commons
+Implementation-Version: 3.3
+Created-By: 14.3-b01 (Sun Microsystems Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.objectweb.asm.commons
+Bundle-Description: asm-commons-3.3
+Bundle-Name: asm-commons-3.3
+Bundle-Version: 3.3
+Export-Package: org.objectweb.asm.commons;uses:="org.objectweb.asm,org
+ .objectweb.asm.signature,org.objectweb.asm.tree"
+Import-Package: java.io,java.lang,java.lang.reflect,java.security,java
+ .util,org.objectweb.asm;version="3.3",org.objectweb.asm.signature;ver
+ sion="3.3",org.objectweb.asm.tree;version="3.3"

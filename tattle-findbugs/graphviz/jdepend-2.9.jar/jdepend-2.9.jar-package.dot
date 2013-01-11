@@ -1,0 +1,9 @@
+digraph jdepend_2_9_package_dependencies {
+  node [shape = box, fontsize=10.0];
+  jdepend_framework -> junit_framework;
+  jdepend_framework -> junit_textui;
+  jdepend_swingui -> jdepend_framework;
+  jdepend_textui -> jdepend_framework;
+  jdepend_xmlui -> jdepend_framework;
+  jdepend_xmlui -> jdepend_textui;
+}

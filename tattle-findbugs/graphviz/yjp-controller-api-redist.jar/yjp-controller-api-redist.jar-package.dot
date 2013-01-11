@@ -1,0 +1,8 @@
+digraph yjp_controller_api_redist_package_dependencies {
+  node [shape = box, fontsize=10.0];
+  com_yourkit_api -> com_yourkit;
+  com_yourkit_api -> com_yourkit_runtime;
+  com_yourkit_api -> com_yourkit_util;
+  com_yourkit_runtime -> com_yourkit;
+  com_yourkit_runtime -> com_yourkit_util;
+}

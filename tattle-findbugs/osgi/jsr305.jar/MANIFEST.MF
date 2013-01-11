@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_13-119 (Apple Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: javax.annotation
+Bundle-Description: jsr305
+Bundle-Name: jsr305
+Bundle-Version: 0.0.0
+Export-Package: javax.annotation;uses:="javax.annotation.meta",javax.a
+ nnotation.concurrent,javax.annotation.meta;uses:="javax.annotation"
+Import-Package: java.lang,java.lang.annotation,java.util.regex

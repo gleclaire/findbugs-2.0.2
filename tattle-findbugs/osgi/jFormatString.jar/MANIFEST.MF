@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_29-b11-402-10M3527 (Apple Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: edu.umd.cs.findbugs.formatStringChecker
+Bundle-Description: jFormatString
+Bundle-Name: jFormatString
+Bundle-Version: 0.0.0
+Export-Package: edu.umd.cs.findbugs.formatStringChecker;uses:="org.jun
+ it"
+Import-Package: java.io,java.lang,java.math,java.sql,java.util,java.ut
+ il.regex,org.junit;version="0.0.0"

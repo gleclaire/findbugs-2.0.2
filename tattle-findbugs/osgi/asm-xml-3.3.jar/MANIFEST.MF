@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Eugene Kuleshov
+Ant-Version: Apache Ant 1.7.1
+Implementation-Title: ASM XML classes
+Implementation-Version: 3.3
+Class-Path: asm-3.3.jar asm-util-3.3.jar asm-attrs-3.3.jar
+Created-By: 14.3-b01 (Sun Microsystems Inc.)
+Main-class: org.objectweb.asm.xml.Processor
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.objectweb.asm.xml
+Bundle-Description: asm-xml-3.3
+Bundle-Name: asm-xml-3.3
+Bundle-Version: 3.3
+Export-Package: org.objectweb.asm.xml;uses:="org.objectweb.asm,org.obj
+ ectweb.asm.util"
+Import-Package: java.io,java.lang,java.util,java.util.zip,javax.xml.tr
+ ansform,javax.xml.transform.sax,javax.xml.transform.stream,org.object
+ web.asm;version="3.3",org.objectweb.asm.util;version="3.3",org.xml.sa
+ x,org.xml.sax.ext,org.xml.sax.helpers

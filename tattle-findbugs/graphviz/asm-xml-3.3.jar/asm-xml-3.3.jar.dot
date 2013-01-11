@@ -1,0 +1,5 @@
+digraph asm_xml_3_3_dependencies {
+  node [shape = box, fontsize=10.0];
+  asm_xml_3_3 -> asm_3_3;
+  asm_xml_3_3 -> asm_util_3_3;
+}

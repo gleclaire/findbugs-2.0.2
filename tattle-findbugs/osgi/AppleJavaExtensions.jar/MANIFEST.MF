@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Created-By: 1.4.2_04 (Apple Computer, Inc.)
+
+
+### OSGi information
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.apple.eawt
+Bundle-Description: AppleJavaExtensions
+Bundle-Name: AppleJavaExtensions
+Bundle-Version: 0.0.0
+Export-Package: com.apple.eawt,com.apple.eio
+Import-Package: java.awt,java.beans,java.io,java.lang,java.util
