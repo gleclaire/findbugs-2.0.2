@@ -4,3 +4,5 @@ target
 tattle-findbugs/*
 **/bin/*
 **/build/*
+.settings
+.project

@@ -41,10 +41,6 @@
     </dependency>
     <dependency>
       <groupId>asm</groupId>
-      <artifactId>asm-tree</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>asm</groupId>
       <artifactId>asm-commons</artifactId>
     </dependency>
     <dependency>
@@ -55,9 +51,79 @@
       <groupId>net.jcip</groupId>
       <artifactId>jcip-annotations</artifactId>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jdepend</groupId>
+      <artifactId>jdepend</artifactId>
+    </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+      </dependency>
   </dependencies>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
+    <testSourceDirectory>${basedir}/src/junit</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>${basedir}/etc</directory>
+        <includes>
+          <include>*.xsd</include>
+          <include>bugrank.txt</include>
+          <include>findbugs.xml</include>
+          <include>messages*.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/xsl</directory>
+        <includes>
+          <include>*.xsl</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/antTask</directory>
+        <includes>
+          <include>**/*.xsl</include>
+          <include>**/*.properties</include>
+          <include>**/*.db</include>
+          <include>**/*.png</include>
+          <include>**/*.html</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/antTask</directory>
+        <includes>
+          <include>**/*.xsl</include>
+          <include>**/*.properties</include>
+          <include>**/*.db</include>
+          <include>**/*.png</include>
+          <include>**/*.html</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/gui</directory>
+        <includes>
+          <include>**/*.xsl</include>
+          <include>**/*.properties</include>
+          <include>**/*.db</include>
+          <include>**/*.png</include>
+          <include>**/*.html</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/src/java</directory>
+        <includes>
+          <include>**/*.xsl</include>
+          <include>**/*.properties</include>
+          <include>**/*.db</include>
+          <include>**/*.png</include>
+          <include>**/*.html</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -70,6 +136,32 @@
             <exclude>**/infonodeJava/**</exclude>
             <exclude>**/obsolete/**</exclude>
           </excludes>
+          <testExcludes>
+            <exclude>**/architecture/**</exclude>
+            <exclude>**/ba/**</exclude>
+            <exclude>**/cloud/**</exclude>
+            <exclude>**/config/**</exclude>
+            <exclude>**/filter/**</exclude>
+            <exclude>**/gui2/**</exclude>
+            <exclude>**/internalAnnotations/**</exclude>
+            <exclude>**/io/**</exclude>
+            <exclude>**/jaif/**</exclude>
+            <exclude>**/ml/**</exclude>
+            <exclude>**/updates/**</exclude>
+            <exclude>**/util/**</exclude>
+            <exclude>**/visitclass/**</exclude>
+            <exclude>**/workflow/**</exclude>
+            <exclude>**/DetectorsTest.java</exclude>
+          </testExcludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${basedir}/etc/MANIFEST-findbugs.MF</manifestFile>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
