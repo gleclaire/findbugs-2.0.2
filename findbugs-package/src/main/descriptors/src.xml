@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<assembly>
+  <id>src</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <!-- Binary Files -->
+    <fileSet>
+      <directory>../findbugs/src/doc</directory>
+      <outputDirectory>/doc</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+      <excludes>
+        <exclude>**/target/**</exclude>
+
+        <exclude>**/build/**</exclude>
+      </excludes>
+    </fileSet>
+
+  </fileSets>
+</assembly>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <!--<id>common-bin</id>-->
+
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/lib</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+        <include>com.google.code.findbugs:bcel</include>
+        <include>com.google.code.findbugs:jFormatString</include>
+        <include>com.google.code.findbugs:jsr305</include>
+        <include>com.google.code.findbugs:findbugs</include>
+        <include>com.google.code.findbugs:findbugs-annotations</include>
+        <include>dom4j:dom4j</include>
+        <include>asm:asm</include>
+        <include>asm:asm-commons</include>
+        <include>commons-lang:commons-lang</include>
+        <include>net.jcip:jcip-annotations</include>
+        <include>jaxen:jaxen</include>
+        <include>com.apple:AppleJavaExtensions</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+
+
+</component>
