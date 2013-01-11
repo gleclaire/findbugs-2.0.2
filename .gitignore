@@ -1,0 +1,7 @@
+
+**/classesEclipse/*
+target
+**/bin/*
+**/build/*
+.settings
+.project
