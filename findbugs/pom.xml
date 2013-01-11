@@ -13,17 +13,14 @@
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>bcel</artifactId>
-      <version>2.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jFormatString</artifactId>
-      <version>2.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
-      <version>2.0.1</version>
     </dependency>
     <dependency>
       <groupId>dom4j</groupId>
@@ -52,17 +49,14 @@
       <artifactId>jcip-annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
     </dependency>
     <dependency>
-      <groupId>jdepend</groupId>
-      <artifactId>jdepend</artifactId>
+      <groupId>com.apple</groupId>
+      <artifactId>AppleJavaExtensions</artifactId>
     </dependency>
-      <dependency>
-        <groupId>jaxen</groupId>
-        <artifactId>jaxen</artifactId>
-      </dependency>
+
   </dependencies>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
@@ -137,20 +131,16 @@
             <exclude>**/obsolete/**</exclude>
           </excludes>
           <testExcludes>
+<!-- 
+ -->            
             <exclude>**/architecture/**</exclude>
             <exclude>**/ba/**</exclude>
             <exclude>**/cloud/**</exclude>
-            <exclude>**/config/**</exclude>
-            <exclude>**/filter/**</exclude>
+<!-- 
             <exclude>**/gui2/**</exclude>
+ -->            
             <exclude>**/internalAnnotations/**</exclude>
-            <exclude>**/io/**</exclude>
-            <exclude>**/jaif/**</exclude>
-            <exclude>**/ml/**</exclude>
             <exclude>**/updates/**</exclude>
-            <exclude>**/util/**</exclude>
-            <exclude>**/visitclass/**</exclude>
-            <exclude>**/workflow/**</exclude>
             <exclude>**/DetectorsTest.java</exclude>
           </testExcludes>
         </configuration>
