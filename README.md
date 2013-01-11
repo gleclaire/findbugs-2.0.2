@@ -8,7 +8,7 @@ TODO
 ----
 
 1. Remove IDE project files
-1. Create Master POM
+1. <del>Create Master POM</del>
 1. Create Modules POMs (leave source where it currently is located).
 1. Remove jar files
 1. Move Source code to correct modules and directory structure.
