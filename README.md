@@ -23,7 +23,7 @@ TODO
 
 [Sonatype OSS Maven Repository Usage Guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide)
 
-[Research from TattleTale](http://gleclaire.github.com/findbugs-2.0.2/tattletale-findbugs/index.html)
+[Research from TattleTale](http://gleclaire.github.com/findbugs-2.0.2/tattle-findbugs/index.html)
 ------------------------
 
 1. jsr305.jar, annotations.jar, and jcip-annotations.jar all get merged into annotations.jar
