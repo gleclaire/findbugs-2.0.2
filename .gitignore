@@ -6,3 +6,4 @@ tattle-findbugs/*
 **/build/*
 .settings
 .project
+.classpath

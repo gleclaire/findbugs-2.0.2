@@ -131,16 +131,10 @@
             <exclude>**/obsolete/**</exclude>
           </excludes>
           <testExcludes>
-<!-- 
- -->            
             <exclude>**/architecture/**</exclude>
-            <exclude>**/ba/**</exclude>
             <exclude>**/cloud/**</exclude>
 <!-- 
-            <exclude>**/gui2/**</exclude>
  -->            
-            <exclude>**/internalAnnotations/**</exclude>
-            <exclude>**/updates/**</exclude>
             <exclude>**/DetectorsTest.java</exclude>
           </testExcludes>
         </configuration>
