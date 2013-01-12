@@ -9,15 +9,24 @@
   <fileSets>
     <!-- Binary Files -->
     <fileSet>
-      <directory>../findbugs/src/doc</directory>
-      <outputDirectory>/doc</outputDirectory>
+      <directory>../findbugs</directory>
+      <outputDirectory>/</outputDirectory>
       <includes>
         <include>**/*</include>
       </includes>
       <excludes>
-        <exclude>**/target/**</exclude>
-
         <exclude>**/build/**</exclude>
+        <!-- disable build, IDEA and Eclipse files -->
+        <exclude>**/*.i??</exclude>
+        <exclude>**/eclipse-classes/**</exclude>
+        <exclude>**/.project</exclude>
+        <exclude>**/.classpath</exclude>
+        <exclude>**/.settings/</exclude>
+        <exclude>**/.settings/*</exclude>
+        <exclude>**/target/</exclude>
+        <exclude>**/target/*</exclude>
+        <exclude>**/*.ser</exclude>
+        <exclude>**/*.log</exclude>
       </excludes>
     </fileSet>
 
