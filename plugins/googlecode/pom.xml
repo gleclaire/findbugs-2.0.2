@@ -9,6 +9,13 @@
   <artifactId>googlecode</artifactId>
   <packaging>jar</packaging>
 
+<dependencies>
+<dependency>
+    <groupId>com.google.gdata</groupId>
+    <artifactId>gdata-client</artifactId>
+    <version>1.0</version>
+</dependency>
+</dependencies>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <testSourceDirectory>${basedir}/src/junit</testSourceDirectory>

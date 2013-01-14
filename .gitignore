@@ -7,3 +7,4 @@ tattle-findbugs/*
 .settings
 .project
 .classpath
+*.class
