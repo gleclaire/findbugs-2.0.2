@@ -7,19 +7,19 @@ Refactor build to use Maven instead of ANT
 TODO
 ----
 
-1. Remove IDE project files
+1. <del>Remove IDE project files</del>
 1. <del>Create Master POM</del>
 1. Create Modules POMs (leave source where it currently is located).
 1. Remove jar files that are in the Central repository.
 1. Remove unused jar files.
 1. Move Source code to correct modules and directory structure.
 1. Remove ANT Build files
-1. Ensure apple dependency is not packaged
-1. Re-write history to eliminate repository-bloat from binary aftifacts
+1. <del>Ensure apple dependency is not packaged</del>
 1. Get jsr305.jar into central repository
 1. get updated bcel as a separate module and deployed to central repository (i.e. findbugs-bcel-5.1.jar)
 1. Get jFormatString setup as a standalone project or module to deploy to Central repository.
 1. Combine findbugs-ant.jar into findbugs.jar and update scripts and documentation to reflect changes.
+1. Create Eclipse plugin Maven POMs using Tycho.
 
  
 
