@@ -60,7 +60,7 @@
     </fileSet>
 
     <fileSet>
-      <directory>../findbugs/src/plugin</directory>
+      <directory>../findbugs/plugin</directory>
       <outputDirectory>/plugin</outputDirectory>
       <includes>
         <include>*</include>
@@ -70,7 +70,6 @@
     </fileSet>
 
   </fileSets>
-
 
 
   <componentDescriptors>

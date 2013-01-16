@@ -8,44 +8,68 @@
   <fileSets>
     <!-- Copy over everything that needs to get unix line endings -->
     <fileSet>
-      <directory>src/main/release</directory>
+      <directory>../findbugs</directory>
       <outputDirectory>/</outputDirectory>
-      <excludes>
-        <!--<exclude>bin/**</exclude>-->
-      </excludes>
-      <lineEnding>unix</lineEnding>
-    </fileSet>
-
-    <!-- copy the examples -->
-    <fileSet>
-      <directory>../examples</directory>
-      <outputDirectory>/examples</outputDirectory>
-      <excludes>
-        <!-- disable build, IDEA and Eclipse files -->
-        <exclude>**/*.i??</exclude>
-        <exclude>**/eclipse-classes/**</exclude>
-        <exclude>**/.project</exclude>
-        <exclude>**/.classpath</exclude>
-        <exclude>**/target/</exclude>
-        <exclude>**/target/*</exclude>
-        <exclude>**/*.ser</exclude>
-        <exclude>**/*.log</exclude>
-        <!-- exclude README.txt which need get filtered -->
-      </excludes>
-      <lineEnding>unix</lineEnding>
-    </fileSet>
-
-
-   <!-- copy the java docs -->
-   <fileSet>
-    <directory>${basedir}/target/javadoc/</directory>
-      <outputDirectory>/doc/javadoc</outputDirectory>
       <includes>
-        <include>**/**</include>
+        <include>README.txt</include>
+        <include>LICENSE*.txt</include>
+        <include>bin/*.bat</include>
+        <include>lib/buggy.icns</include>
+        <include>src/xsl/*.xsl</include>
       </includes>
+      <lineEnding>unix</lineEnding>
     </fileSet>
-  </fileSets>
 
+    <fileSet>
+      <directory>../findbugs/src/scripts</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>*</include>
+        <include>experimental/*</include>
+        <include>deprecated/*</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+
+    <fileSet>
+      <directory>../findbugs/src/scripts/standard</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>*</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+
+    <fileSet>
+      <directory>../findbugs/src/scripts/windows</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>*</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+
+    <fileSet>
+      <directory>../findbugs/src/doc</directory>
+      <outputDirectory>/doc</outputDirectory>
+      <includes>
+        <include>*</include>
+        <include>**/*</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+
+    <fileSet>
+      <directory>../findbugs/plugin</directory>
+      <outputDirectory>/plugin</outputDirectory>
+      <includes>
+        <include>*</include>
+        <include>**/*</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+
+  </fileSets>
 
 
   <componentDescriptors>

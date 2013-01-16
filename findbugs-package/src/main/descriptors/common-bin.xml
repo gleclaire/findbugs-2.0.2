@@ -22,6 +22,25 @@
         <include>com.apple:AppleJavaExtensions</include>
       </includes>
     </dependencySet>
+    <dependencySet>
+      <outputDirectory>/plugin</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+        <include>com.google.code.findbugs:findbugsCommunalCloud</include>
+        <include>com.google.code.findbugs:webCloudClient</include>
+      </includes>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/optionalPlugin</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+        <include>com.google.code.findbugs:bugCollectionCloud</include>
+        <include>com.google.code.findbugs:noUpdateChecks</include>
+        <include>com.google.code.findbugs:poweruser</include>
+      </includes>
+    </dependencySet>
   </dependencySets>
 
 
