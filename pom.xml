@@ -174,11 +174,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
-        <artifactId>webCloudProtocol</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
         <artifactId>findbugsCommunalCloud</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -320,6 +315,21 @@
     <module>findbugs</module>
     <module>plugins</module>
     <module>webCloudProtocol</module>
-    <module>findbugs-package</module>
+    <module>eclipsePlugin</module>
   </modules>
+
+  <profiles>
+    <profile>
+      <id>assembly</id>
+      <activation>
+        <property>
+          <name>!noassembly</name>
+        </property>
+      </activation>
+      <modules>
+        <module>findbugs-package</module>
+      </modules>
+    </profile>
+  </profiles>
+
 </project>
