@@ -4,6 +4,7 @@
     <groupId>com.google.code.findbugs</groupId>
     <artifactId>findbugs-project</artifactId>
     <version>2.0.2</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>findbugs</artifactId>
@@ -133,8 +134,7 @@
           <testExcludes>
             <exclude>**/architecture/**</exclude>
             <exclude>**/cloud/**</exclude>
-<!-- 
- -->            
+            <!-- -->
             <exclude>**/DetectorsTest.java</exclude>
           </testExcludes>
         </configuration>

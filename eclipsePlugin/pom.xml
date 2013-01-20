@@ -4,10 +4,11 @@
     <groupId>com.google.code.findbugs</groupId>
     <artifactId>findbugs-project</artifactId>
     <version>2.0.2</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>findbugs-eclipse</artifactId>
-  <packaging>jar</packaging>
+  <packaging>eclipse-plugin</packaging>
 
   <properties>
     <tycho-version>0.16.0</tycho-version>
@@ -80,18 +81,22 @@
       </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
         <version>${tycho-version}</version>
-        <configuration>
-          <target>
-            <artifact>
-              <groupId>${project.groupId}</groupId>
-              <artifactId>${project.artifactId}</artifactId>
-              <version>${project.version}</version>
-              <classifier>TargetFileNameWithoutExtension</classifier>
-            </artifact>
-          </target>
-        </configuration>
+        <executions>
+          <execution>
+            <id>materialize-products</id>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>archive-products</id>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

@@ -1,0 +1,74 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.google.code.findbugs</groupId>
+    <artifactId>findbugs-project</artifactId>
+    <version>2.0.2</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>smokeTest</artifactId>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>findbugs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>bcel</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jFormatString</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>install</goal>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <property name="findbugs.home" value="." />
+                <ant dir="${pluginsSrc.dir}/findbugsCommunalCloud"
+                  target="install" inheritAll="false" />
+                <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties"
+                  classpath="${anttask.jar}" />
+                <findbugs home="." output="xml:withMessages"
+                  cloud="edu.umd.cs.findbugs.cloud.appengine.findbugs-cloud"
+                  jvmargs="-ea -Xmx1200m -Dfindbugs.failOnCloudError=true -Dfindbugs.cloud.token=238b6fc80cec17ec"
+                  excludeFilter="findbugsExclude.xml" projectName="FindBugs"
+                  maxRank="20" timeout="1800000"
+                  outputFile="${build.dir}/findbugscheckAll.xml">
+                  <class location="${classes.dir}" />
+                  <sourcePath path="src/java:src/gui:src/junit:src/tools" />
+                  <auxClasspath refid="tools.classpath" />
+                  <auxClasspath path="lib/ant.jar" />
+                </findbugs>
+                <filterBugs home="." withMessages="true"
+                  notAProblem="false" jvmargs="-ea -Xmx1200m"
+                  input="${build.dir}/findbugscheckAll.xml" output="${build.dir}/findbugscheck.xml">
+                </filterBugs>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
