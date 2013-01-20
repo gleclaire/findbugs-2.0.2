@@ -315,7 +315,7 @@
     <module>findbugs</module>
     <module>plugins</module>
     <module>webCloudProtocol</module>
-    <module>eclipsePlugin</module>
+<!--     <module>eclipsePlugin</module> -->
   </modules>
 
   <profiles>
@@ -328,6 +328,17 @@
       </activation>
       <modules>
         <module>findbugs-package</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>smokeTest</id>
+      <activation>
+        <property>
+          <name>!nosmoke</name>
+        </property>
+      </activation>
+      <modules>
+        <module>smokeTest</module>
       </modules>
     </profile>
   </profiles>
