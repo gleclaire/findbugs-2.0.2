@@ -338,7 +338,7 @@
         </property>
       </activation>
       <modules>
-        <module>smokeTest</module>
+        <module>findbugsTestCases</module>
       </modules>
     </profile>
   </profiles>
