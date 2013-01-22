@@ -290,6 +290,16 @@
       <groupId>jdepend</groupId>
       <artifactId>jdepend</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>jaxen</groupId>
+    	<artifactId>jaxen</artifactId>
+    	<exclusions>
+    		<exclusion>
+    			<artifactId>icu4j</artifactId>
+    			<groupId>com.ibm.icu</groupId>
+    		</exclusion>
+    	</exclusions>
+    </dependency>
   </dependencies>
   <build>
     <pluginManagement>

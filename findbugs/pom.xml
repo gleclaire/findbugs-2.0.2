@@ -50,12 +50,9 @@
       <artifactId>jcip-annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.apple</groupId>
       <artifactId>AppleJavaExtensions</artifactId>
+      <optional>true</optional>
     </dependency>
 
   </dependencies>

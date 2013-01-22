@@ -1,4 +1,5 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.google.code.findbugs</groupId>
@@ -59,7 +60,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
+      <version>${junit-version}</version><!--$NO-MVN-MAN-VER$-->
     </dependency>
     <dependency>
       <groupId>com.intellij</groupId>
@@ -89,6 +90,39 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <includeProjectDependencies>true</includeProjectDependencies>
+          <includePluginDependencies>false</includePluginDependencies>
+          <executableDependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>findbugs</artifactId>
+           </executableDependency>
+          <mainClass>edu.umd.cs.findbugs.FindBugs2</mainClass>
+          <arguments>
+            <argument>-xml:withMessages</argument>
+            <argument>-output</argument>
+            <argument>${project.build.outputDirectory}/findbugscheckAll.xml</argument>
+            <argument>-projectName</argument>
+            <argument>FindBugsTestCases</argument>
+            <argument>${project.build.outputDirectory}</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+<!--   
+    <arg value="-auxclasspath" />
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.7</version>
@@ -113,25 +147,25 @@
 
                 <java classname="edu.umd.cs.findbugs.FindBugs2"
                   failonerror="true" timeout="1800000" fork="true">
+                  <classpath>
+                    <pathelement path="${compile_classpath}" />
+                  </classpath>
                   <arg value="-xml:withMessages" />
                   <arg value="-output" />
                   <arg
                     value="${project.build.outputDirectory}/findbugscheckAll.xml" />
                   <arg value="-projectName" />
                   <arg value="FindBugsTestCases" />
-                  <!-- <arg value="-auxclasspath" /> -->
-                  <!-- <arg value="${maven.compile.classpath}" /> -->
-                  <arg value="${project.build.outputDirectory}/classes" />
-                  <!-- <auxClasspath location="${compile_classpath}" /> -->
-                  <classpath>
-                    <pathelement path="${compile_classpath}" />
-                  </classpath>
+                  <arg value="${maven.compile.classpath}" />
+                  <arg value="${project.build.outputDirectory}" />
+                  <auxClasspath location="${compile_classpath}" />
                 </java>
               </target>
             </configuration>
           </execution>
         </executions>
       </plugin>
+ -->
     </plugins>
   </build>
 </project>
