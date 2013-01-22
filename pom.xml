@@ -159,6 +159,10 @@
       <timezone>-5</timezone>
     </contributor>
   </contributors>
+  
+  <properties>
+  <junit-version>4.11</junit-version>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
@@ -260,8 +264,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.11</version>
-        <scope>test</scope>
+        <version>${junit-version}</version>
       </dependency>
       <dependency>
         <groupId>jdepend</groupId>

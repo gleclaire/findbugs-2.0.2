@@ -56,10 +56,20 @@
       <artifactId>guava</artifactId>
       <version>12.0</version>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.intellij</groupId>
+      <artifactId>annotations</artifactId>
+      <version>9.0.4</version>
+    </dependency>
   </dependencies>
 
   <build>
-    <testSourceDirectory>${basedir}/src</testSourceDirectory>
+    <sourceDirectory>${basedir}/src</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -67,11 +77,15 @@
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
-          <testIncludes>
+          <debug>true</debug>
+          <compilerArguments>
+            <Xlint:none />
+          </compilerArguments>
+          <includes>
             <include>java/**/*.java</include>
             <include>fakeAnnotations/**/*.java</include>
             <include>fakeLibraries/**/*.java</include>
-          </testIncludes>
+          </includes>
         </configuration>
       </plugin>
       <plugin>
@@ -87,26 +101,32 @@
             </goals>
             <configuration>
               <target>
-                <property name="findbugs.home" value="." />
-                <!-- <ant dir="${pluginsSrc.dir}/findbugsCommunalCloud" target="install" 
-                  inheritAll="false" /> -->
-                <taskdef resource="edu/umd/cs/findbugs/anttask/tasks.properties"
-                  classpath="${anttask.jar}" />
-                <findbugs home="." output="xml:withMessages"
-                  cloud="edu.umd.cs.findbugs.cloud.appengine.findbugs-cloud"
-                  jvmargs="-ea -Xmx1200m -Dfindbugs.failOnCloudError=true -Dfindbugs.cloud.token=238b6fc80cec17ec"
-                  excludeFilter="findbugsExclude.xml" projectName="FindBugs"
-                  maxRank="20" timeout="1800000"
-                  outputFile="${build.dir}/findbugscheckAll.xml">
-                  <class location="${classes.dir}" />
-                  <sourcePath path="src/java:src/gui:src/junit:src/tools" />
-                  <auxClasspath refid="tools.classpath" />
-                  <auxClasspath path="lib/ant.jar" />
-                </findbugs>
-                <filterBugs home="." withMessages="true"
-                  notAProblem="false" jvmargs="-ea -Xmx1200m"
-                  input="${build.dir}/findbugscheckAll.xml" output="${build.dir}/findbugscheck.xml">
-                </filterBugs>
+                <property name="compile_classpath" refid="maven.compile.classpath" />
+                <property name="runtime_classpath" refid="maven.runtime.classpath" />
+                <property name="test_classpath" refid="maven.test.classpath" />
+                <property name="plugin_classpath" refid="maven.plugin.classpath" />
+
+                <echo message="compile classpath: ${compile_classpath}" />
+                <echo message="runtime classpath: ${runtime_classpath}" />
+                <echo message="test classpath: ${test_classpath}" />
+                <echo message="plugin classpath: ${plugin_classpath}" />
+
+                <java classname="edu.umd.cs.findbugs.FindBugs2"
+                  failonerror="true" timeout="1800000" fork="true">
+                  <arg value="-xml:withMessages" />
+                  <arg value="-output" />
+                  <arg
+                    value="${project.build.outputDirectory}/findbugscheckAll.xml" />
+                  <arg value="-projectName" />
+                  <arg value="FindBugsTestCases" />
+                  <!-- <arg value="-auxclasspath" /> -->
+                  <!-- <arg value="${maven.compile.classpath}" /> -->
+                  <arg value="${project.build.outputDirectory}/classes" />
+                  <!-- <auxClasspath location="${compile_classpath}" /> -->
+                  <classpath>
+                    <pathelement path="${compile_classpath}" />
+                  </classpath>
+                </java>
               </target>
             </configuration>
           </execution>
