@@ -8,8 +8,6 @@ package edu.umd.cs.findbugs.annotations;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import edu.umd.cs.findbugs.BugRanker;
-
 /**
  * Annotation indicating that a FindBugs warning is desired.
  *
@@ -29,6 +27,6 @@ public @interface DesireWarning {
     public Confidence confidence() default Confidence.LOW;
 
     /** Expect a warning at least this scary */
-    public int rank() default BugRanker.VISIBLE_RANK_MAX;
+    public int rank() default Constants.VISIBLE_RANK_MAX;
 
 }

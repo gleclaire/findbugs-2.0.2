@@ -30,6 +30,7 @@ import java.util.List;
 
 import javax.annotation.CheckForNull;
 
+import edu.umd.cs.findbugs.annotations.Constants;
 import edu.umd.cs.findbugs.ba.AnalysisContext;
 import edu.umd.cs.findbugs.charsets.UTF8;
 import edu.umd.cs.findbugs.classfile.Global;
@@ -84,9 +85,9 @@ import edu.umd.cs.findbugs.util.Util;
  */
 public class BugRanker {
     /** Maximum value for user visible ranks */
-    public static final int VISIBLE_RANK_MAX = 20;
+    public static final int VISIBLE_RANK_MAX = Constants.VISIBLE_RANK_MAX;
     /** Minimum value for user visible ranks */
-    public static final int VISIBLE_RANK_MIN = 1;
+    public static final int VISIBLE_RANK_MIN = Constants.VISIBLE_RANK_MIN;
 
     static final boolean PLUGIN_DEBUG = Boolean.getBoolean("bugranker.plugin.debug");
 
