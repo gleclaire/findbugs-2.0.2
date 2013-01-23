@@ -12,7 +12,7 @@ TODO
 1. Create Modules POMs (leave source where it currently is located). <b>...In Progress</b>
 1. Remove jar files that are in the Central repository. <b>...In Progress</b>
 1. Remove unused jar files. <b>...In Progress</b>
-1. Move Source code to correct modules and directory structure.
+1. Move Source code to correct modules and directory structure. <b>...In Progress</b>
 1. Remove ANT Build files
 1. <del>Ensure apple dependency is not packaged</del>
 1. Get jsr305.jar into central repository

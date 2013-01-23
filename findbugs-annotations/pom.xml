@@ -21,8 +21,6 @@
     </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>${basedir}/../findbugs/src/java</sourceDirectory>
-    <testSourceDirectory>${basedir}/../findbugs/src/junit</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -30,14 +28,6 @@
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
-          <includes>
-            <include>**/annotations/*.java</include>
-            <include>**/internalAnnotations/*.java</include>
-            <include>**/Priorities.java</include>
-          </includes>
-          <testIncludes>
-            <include>**/internalAnnotations/**</include>
-          </testIncludes>
         </configuration>
       </plugin>
       <plugin>
