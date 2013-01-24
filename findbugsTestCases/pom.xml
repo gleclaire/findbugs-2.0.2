@@ -18,6 +18,15 @@
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
+      <artifactId>findbugs-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>findbugs-package</artifactId>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
       <artifactId>bcel</artifactId>
     </dependency>
     <dependency>
@@ -142,8 +151,6 @@
                 <property name="test_classpath" refid="maven.test.classpath" />
                 <property name="plugin_classpath" refid="maven.plugin.classpath" />
 
-                <echo message="Compile Path: ${compile_classpath}" />
-
                 <property name="findbugs.home"
                   value="${project.build.directory}/findbugs" />
 
@@ -158,18 +165,24 @@
                     value="${project.build.directory}/findbugsJavaCheckAll.xml" />
                   <arg value="-projectName" />
                   <arg value="FindBugsTestCases" />
-                  <!-- <arg value="${maven.compile.classpath}" /> -->
                   <arg value="${project.build.outputDirectory}" />
-                  <!-- <auxClasspath location="${compile_classpath}" /> -->
                 </java>
 
+
+<!-- 
+                <mkdir dir="${findbugs.home}/plugin" />
+
                 <copy file="${com.google.code.findbugs:findbugs:jar}"
-                  tofile="${findbugs.home}/lib/findbugs.jar" />
+                  tofile="${findbugs.home}/lib/findbugs.jar" verbose="true" />
 
                 <copy file="${com.google.code.findbugs:bcel:jar}"
-                  tofile="${findbugs.home}/lib/bcel.jar" />
+                  tofile="${findbugs.home}/lib/bcel.jar" verbose="true" />
 
-                <copy file="${dom4j:dom4j:jar}" tofile="${findbugs.home}/lib/dom4j.jar" />
+                <copy file="${dom4j:dom4j:jar}" todir="${findbugs.home}/lib" verbose="true"/>
+                <copy file="${jaxen:jaxen:jar}" todir="${findbugs.home}/lib" verbose="true" />
+                <copy file="${com.google.code.findbugs:findbugs-annotations:jar}" tofile="${findbugs.home}/lib/annotations.jar" verbose="true" />
+
+                <copy file="${com.google.code.findbugs:findbugs-package:zip}" todir="${findbugs.home}/lib" verbose="true" />
 
                 <taskdef name="findbugs"
                   classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
@@ -181,6 +194,8 @@
                   <auxclasspath path="${compile_classpath}" />
                   <class location="${project.build.outputDirectory}" />
                 </findbugs>
+ -->
+
               </target>
             </configuration>
           </execution>
