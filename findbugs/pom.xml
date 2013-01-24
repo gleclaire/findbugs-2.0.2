@@ -119,7 +119,6 @@
             <exclude>**/obsolete/**</exclude>
           </excludes>
           <testExcludes>
-            <exclude>**/architecture/**</exclude>
             <exclude>**/cloud/**</exclude>
             <!-- -->
             <exclude>**/DetectorsTest.java</exclude>
