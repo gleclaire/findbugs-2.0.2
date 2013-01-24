@@ -159,9 +159,9 @@
       <timezone>-5</timezone>
     </contributor>
   </contributors>
-  
+
   <properties>
-  <junit-version>4.11</junit-version>
+    <junit-version>4.11</junit-version>
   </properties>
 
   <dependencyManagement>
@@ -175,6 +175,12 @@
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>findbugs-annotations</artifactId>
         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>findbugs-package</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
@@ -291,14 +297,14 @@
       <artifactId>jdepend</artifactId>
     </dependency>
     <dependency>
-    	<groupId>jaxen</groupId>
-    	<artifactId>jaxen</artifactId>
-    	<exclusions>
-    		<exclusion>
-    			<artifactId>icu4j</artifactId>
-    			<groupId>com.ibm.icu</groupId>
-    		</exclusion>
-    	</exclusions>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>icu4j</artifactId>
+          <groupId>com.ibm.icu</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
   <build>
@@ -328,7 +334,7 @@
     <module>findbugs</module>
     <module>plugins</module>
     <module>webCloudProtocol</module>
-<!--     <module>eclipsePlugin</module> -->
+    <!-- <module>eclipsePlugin</module> -->
   </modules>
 
   <profiles>
