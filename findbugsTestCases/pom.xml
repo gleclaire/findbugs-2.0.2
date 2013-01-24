@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.google.code.findbugs</groupId>
@@ -19,6 +19,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>bcel</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
@@ -60,7 +64,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit-version}</version><!--$NO-MVN-MAN-VER$-->
+      <version>${junit-version}</version>
     </dependency>
     <dependency>
       <groupId>com.intellij</groupId>
@@ -106,22 +110,20 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
           <includeProjectDependencies>true</includeProjectDependencies>
           <includePluginDependencies>false</includePluginDependencies>
           <executableDependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>findbugs</artifactId>
-           </executableDependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>findbugs</artifactId>
+          </executableDependency>
           <mainClass>edu.umd.cs.findbugs.FindBugs2</mainClass>
           <arguments>
             <argument>-xml:withMessages</argument>
             <argument>-output</argument>
-            <argument>${project.build.outputDirectory}/findbugscheckAll.xml</argument>
+            <argument>${project.build.directory}/findbugsCheckAll.xml</argument>
             <argument>-projectName</argument>
             <argument>FindBugsTestCases</argument>
-            <argument>${project.build.outputDirectory}</argument>
+            <argument>${project.build.directory}</argument>
           </arguments>
         </configuration>
       </plugin>
-<!--   
-    <arg value="-auxclasspath" />
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -140,10 +142,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                 <property name="test_classpath" refid="maven.test.classpath" />
                 <property name="plugin_classpath" refid="maven.plugin.classpath" />
 
-                <echo message="compile classpath: ${compile_classpath}" />
-                <echo message="runtime classpath: ${runtime_classpath}" />
-                <echo message="test classpath: ${test_classpath}" />
-                <echo message="plugin classpath: ${plugin_classpath}" />
+                <echo message="Compile Path: ${compile_classpath}" />
+
+                <property name="findbugs.home"
+                  value="${project.build.directory}/findbugs" />
 
                 <java classname="edu.umd.cs.findbugs.FindBugs2"
                   failonerror="true" timeout="1800000" fork="true">
@@ -153,19 +155,37 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                   <arg value="-xml:withMessages" />
                   <arg value="-output" />
                   <arg
-                    value="${project.build.outputDirectory}/findbugscheckAll.xml" />
+                    value="${project.build.directory}/findbugsJavaCheckAll.xml" />
                   <arg value="-projectName" />
                   <arg value="FindBugsTestCases" />
-                  <arg value="${maven.compile.classpath}" />
+                  <!-- <arg value="${maven.compile.classpath}" /> -->
                   <arg value="${project.build.outputDirectory}" />
-                  <auxClasspath location="${compile_classpath}" />
+                  <!-- <auxClasspath location="${compile_classpath}" /> -->
                 </java>
+
+                <copy file="${com.google.code.findbugs:findbugs:jar}"
+                  tofile="${findbugs.home}/lib/findbugs.jar" />
+
+                <copy file="${com.google.code.findbugs:bcel:jar}"
+                  tofile="${findbugs.home}/lib/bcel.jar" />
+
+                <copy file="${dom4j:dom4j:jar}" tofile="${findbugs.home}/lib/dom4j.jar" />
+
+                <taskdef name="findbugs"
+                  classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
+                  <classpath refid="maven.compile.classpath" />
+                </taskdef>
+                <findbugs home="${findbugs.home}" output="xml:withMessages"
+                  failOnError="true"
+                  outputFile="${project.build.directory}/findbugsAntCheckAll.xml">
+                  <auxclasspath path="${compile_classpath}" />
+                  <class location="${project.build.outputDirectory}" />
+                </findbugs>
               </target>
             </configuration>
           </execution>
         </executions>
       </plugin>
- -->
     </plugins>
   </build>
 </project>
