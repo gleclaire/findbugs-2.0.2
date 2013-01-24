@@ -35,7 +35,12 @@
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
           <archive>
-            <manifestFile>${basedir}/../findbugs/etc/MANIFEST-findbugsGUI.MF</manifestFile>
+            <manifestEntries>
+              <Main-Class>edu.umd.cs.findbugs.LaunchAppropriateUI</Main-Class>
+            </manifestEntries>
+            <manifest>
+              <addClasspath>true</addClasspath>
+            </manifest>
           </archive>
         </configuration>
       </plugin>
