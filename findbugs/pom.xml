@@ -45,11 +45,6 @@
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.apple</groupId>
-      <artifactId>AppleJavaExtensions</artifactId>
-    </dependency>
-
   </dependencies>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>

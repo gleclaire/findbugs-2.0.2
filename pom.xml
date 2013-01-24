@@ -335,6 +335,7 @@
     <module>plugins</module>
     <module>webCloudProtocol</module>
     <!-- <module>eclipsePlugin</module> -->
+    <module>findbugs-gui</module>
   </modules>
 
   <profiles>
