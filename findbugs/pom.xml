@@ -48,7 +48,6 @@
     <dependency>
       <groupId>com.apple</groupId>
       <artifactId>AppleJavaExtensions</artifactId>
-      <optional>true</optional>
     </dependency>
 
   </dependencies>
