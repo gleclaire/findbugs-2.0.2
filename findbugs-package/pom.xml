@@ -41,10 +41,6 @@
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
-      <artifactId>webCloudProtocol</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
       <artifactId>noUpdateChecks</artifactId>
     </dependency>
     <dependency>
