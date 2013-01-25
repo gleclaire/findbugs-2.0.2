@@ -20,6 +20,7 @@ TODO
 1. Combine findbugs-ant.jar into findbugs.jar and update scripts and documentation to reflect changes.
 1. Create Eclipse plugin Maven POMs using Tycho. <b>...In Progress</b>
 1. Create findbugs AntTask tests.
+1. Create findbugs scripts tests.
 
  
 
