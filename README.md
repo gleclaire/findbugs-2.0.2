@@ -22,6 +22,8 @@ TODO
 1. Update Findbugs AntTask to use classpath setting instead of findbugs home setting.
 1. Create findbugs AntTask tests.
 1. Create findbugs scripts tests.
+1. Create Maven module to generate site.
+
 
  
 
