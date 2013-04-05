@@ -171,7 +171,10 @@ public abstract class AnalysisContext {
      * Get the AnalysisContext associated with this thread
      */
     static public AnalysisContext currentAnalysisContext() {
-        return currentAnalysisContext.get();
+        if (currentAnalysisContext == null)
+            return null;
+        else
+            return currentAnalysisContext.get();
     }
 
     static public XFactory currentXFactory() {
